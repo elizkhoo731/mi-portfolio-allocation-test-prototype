@@ -1,0 +1,28 @@
+/**
+ * Mobile prototype viewport (MLDS: 390px logical width, 16px horizontal inset).
+ * See docs/MLDS-4_0-Reference.md — Mobile Phone Frame.
+ */
+
+.mobile-device {
+  position: relative;
+  width: 100%;
+  max-width: 390px;
+  margin: 0 auto;
+  min-height: min(736px, 86vh);
+  background: var(--bg-primary, var(--color-bg));
+  border-radius: 24px;
+  border: 1px solid var(--border-primary, rgba(0, 0, 0, 0.08));
+  box-shadow: var(--shadow-md, 0 4px 12px rgba(0, 0, 0, 0.08));
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  isolation: isolate;
+}
+
+.mobile-device__inner {
+  flex: 1;
+  min-height: 0;
+  overflow-y: auto;
+  padding: var(--space-16) var(--space-16) var(--space-24);
+  -webkit-overflow-scrolling: touch;
+}

@@ -1,0 +1,65 @@
+.portfolio-widget__header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: var(--space-12);
+  margin-bottom: var(--space-16);
+}
+
+.portfolio-widget__title {
+  margin: 0;
+  font-size: 1rem;
+  font-weight: 600;
+  line-height: 1.35;
+  letter-spacing: -0.02em;
+}
+
+.portfolio-widget__explainer {
+  margin: var(--space-8) 0 0;
+  max-width: 16rem;
+  font-size: 0.75rem;
+  line-height: 1.4;
+  color: var(--color-text-muted);
+}
+
+.portfolio-widget__manage {
+  flex-shrink: 0;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--color-accent);
+  text-decoration: none;
+}
+
+.portfolio-widget__manage:hover {
+  text-decoration: underline;
+}
+
+.portfolio-widget__row {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  gap: var(--space-16);
+}
+
+.portfolio-widget__copy {
+  flex: 1;
+  min-width: 0;
+}
+
+.portfolio-widget__copy .segment-legend {
+  margin-top: 0;
+}
+
+.portfolio-widget__holdings-link {
+  display: inline-flex;
+  margin-top: var(--space-12);
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: var(--color-accent);
+  text-decoration: none;
+}
+
+.portfolio-widget__holdings-link:hover {
+  text-decoration: underline;
+}

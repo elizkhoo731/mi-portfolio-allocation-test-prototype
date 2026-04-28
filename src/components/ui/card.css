@@ -1,0 +1,10 @@
+.ml-card {
+  background: var(--color-surface);
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border-primary, rgba(0, 0, 0, 0.08));
+  padding: var(--space-16);
+}
+
+.ml-card--elevated {
+  box-shadow: var(--shadow-sm, 0 1px 3px rgba(0, 0, 0, 0.06));
+}

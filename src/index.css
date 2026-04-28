@@ -1,0 +1,58 @@
+:root {
+  /* MLDS-aligned typography substitute (see docs/MLDS-4_0-Reference.md). */
+  --font-family: "DM Sans", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial,
+    sans-serif;
+  --space-4: 4px;
+  --space-8: 8px;
+  --space-12: 12px;
+  --space-16: 16px;
+  --space-24: 24px;
+  --radius-md: 16px;
+  /* Prototype accent from allocation spec / Section_1 reference. */
+  --color-accent: #1d9e75;
+  --color-accent-muted: color-mix(in srgb, var(--color-accent) 12%, white);
+  --color-text: #000000;
+  --color-text-muted: rgba(0, 0, 0, 0.64);
+  --color-surface: #ffffff;
+  --color-bg: #f6f6f6;
+  --bg-primary: #f6f6f6;
+  --radius-card: var(--radius-md);
+  --font-sans: var(--font-family);
+  --bg-warning: #fffce9;
+  --color-warning: #b89f00;
+  --radius-lg: 20px;
+  --border-primary: rgba(0, 0, 0, 0.08);
+  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.06);
+  --overlay: rgba(0, 0, 0, 0.6);
+  --neutral-300: #e2e2e2;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-family);
+  color: var(--color-text);
+  background: var(--color-bg);
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+a {
+  color: var(--color-accent);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}

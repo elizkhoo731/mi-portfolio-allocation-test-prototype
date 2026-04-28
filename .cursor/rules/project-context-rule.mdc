@@ -1,0 +1,82 @@
+---
+alwaysApply: true
+---
+
+# Project Context Rule (MANDATORY)
+
+Before generating any code, UI, architecture, or product decisions, you MUST always reference and align with the following documents located in /docs:
+
+## Required Context Files (always load first)
+1. /docs/company-context.md
+2. /docs/MLDS-4_0-Reference.md
+3. /docs/moneylion-project-instructions.md
+4. /docs/moneylion-workflow-instructions.md
+
+---
+
+## Strict Rules
+
+### 1. Always read context first
+You must treat the 4 files above as the source of truth before:
+- Writing any code
+- Designing any UI
+- Making product decisions
+- Suggesting architecture
+- Modifying existing flows
+
+If any instruction conflicts with your prior assumptions, the docs override everything.
+
+---
+
+### 2. No execution without context alignment
+If a request is missing alignment with these documents, you must:
+- Pause implementation logic
+- Infer missing requirements from the 4 docs first
+- Ensure consistency with system design, UX patterns, and workflows defined there
+
+---
+
+### 3. Design system compliance (mandatory)
+All UI must:
+- Use components defined in /docs/MLDS-4_0-Reference.md
+- Follow spacing, typography, and interaction rules strictly
+- Avoid introducing new patterns unless explicitly justified
+
+---
+
+### 4. Product behavior consistency
+All features must:
+- Align with business logic in /docs/company-context.md
+- Respect user flows defined in /docs/moneylion-project-instructions.md
+- Follow process rules in /docs/moneylion-workflow-instructions.md
+
+---
+
+### 5. No redundant assumptions
+Do NOT:
+- Re-define product behavior already described in docs
+- Invent alternative workflows without checking existing ones
+- Override system rules for convenience
+
+---
+
+### 6. Resolution priority order
+When conflicts appear, follow this hierarchy:
+
+1. company-context.md (business logic)
+2. moneylion-project-instructions.md (product rules)
+3. moneylion-workflow-instructions.md (process execution rules)
+4. MLDS-4_0-Reference.md (UI implementation rules)
+
+---
+
+### 7. Output discipline
+All outputs must:
+- Be consistent with the above documents
+- Avoid contradicting established flows
+- Use existing terminology from the docs
+
+---
+
+## Enforcement Note
+If any of the 4 files are not available or not referenced, you must request them before proceeding.

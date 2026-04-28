@@ -1,0 +1,27 @@
+.page-device-wrap {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.page-placeholder {
+  max-width: 28rem;
+}
+
+.page-placeholder__text {
+  margin: 0 0 var(--space-16);
+  font-size: 0.9375rem;
+  line-height: 1.45;
+  color: var(--color-text-muted);
+}
+
+.page-placeholder__link {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--color-accent);
+  text-decoration: none;
+}
+
+.page-placeholder__link:hover {
+  text-decoration: underline;
+}

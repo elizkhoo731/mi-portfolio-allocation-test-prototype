@@ -1,0 +1,47 @@
+.ml-sheet-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 50;
+  background: var(--overlay, rgba(0, 0, 0, 0.6));
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+}
+
+/* Fallback when a sheet renders outside {@link MobileDeviceFrame} (no portal target). */
+.ml-sheet-overlay--viewport {
+  position: fixed;
+}
+
+.ml-sheet-panel {
+  width: 100%;
+  max-width: 430px;
+  max-height: min(78%, 720px);
+  overflow: auto;
+  background: var(--color-surface);
+  border-radius: var(--radius-lg, 20px) var(--radius-lg, 20px) 0 0;
+  padding: var(--space-8) var(--space-16) var(--space-24);
+  outline: none;
+}
+
+.ml-sheet-handle {
+  width: 36px;
+  height: 4px;
+  margin: var(--space-8) auto var(--space-12);
+  border-radius: var(--radius-full, 999px);
+  background: var(--neutral-300, #e2e2e2);
+}
+
+.ml-sheet-title {
+  margin: 0 0 var(--space-12);
+  font-size: 1.125rem;
+  font-weight: 600;
+  line-height: 1.35;
+  letter-spacing: -0.02em;
+}
+
+.ml-sheet-body {
+  font-size: 0.875rem;
+  line-height: 1.45;
+  color: var(--color-text-muted);
+}
