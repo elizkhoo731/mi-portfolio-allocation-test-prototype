@@ -1,36 +1,161 @@
+/* ── App shell layout ────────────────────────────────────────── */
 .app-shell {
   min-height: 100%;
   display: flex;
   flex-direction: column;
+  background: var(--bg-primary);
 }
 
+/* Brand header bar */
 .app-shell__header {
-  padding: 1rem 1.25rem;
-  background: var(--color-surface);
-  border-bottom: 1px solid color-mix(in srgb, var(--color-text) 8%, transparent);
+  display: flex;
+  align-items: center;
+  gap: var(--space-12);
+  padding: var(--space-12) var(--space-20);
+  background: var(--bg-secondary);
+  border-bottom: 1px solid var(--border-primary);
 }
 
-.app-shell__title {
-  margin: 0;
-  font-size: 1.25rem;
-  font-weight: 700;
+.app-shell__logo {
+  font-size: 1rem;
+  font-weight: var(--font-weight-medium);
+  letter-spacing: -0.01em;
+  color: var(--text-primary);
 }
 
-.app-shell__subtitle {
-  margin: 0.25rem 0 0;
-  font-size: 0.875rem;
-  color: var(--color-text-muted);
+.app-shell__header-subtitle {
+  font-size: 0.8125rem;
+  color: var(--text-secondary);
+  letter-spacing: -0.01em;
 }
 
-.app-shell__main {
+/* Two-column body — scenarios always visible */
+.app-shell__body {
   flex: 1;
-  padding: var(--space-16) var(--space-16) var(--space-24);
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  gap: var(--space-24);
+  padding: var(--space-24) var(--space-24) var(--space-32);
+  max-width: 1000px;
+  margin: 0 auto;
   width: 100%;
-  max-width: 100%;
+  box-sizing: border-box;
 }
 
-.home-page__intro {
-  margin: 0;
-  max-width: 40rem;
-  color: var(--color-text-muted);
+/* ── Scenarios panel ── */
+.app-shell__scenarios {
+  flex: 0 0 210px;
+  min-width: 0;
+  position: sticky;
+  top: var(--space-24);
+  align-self: flex-start;
+}
+
+.app-shell__scenarios-title {
+  margin: 0 0 var(--space-8);
+  font-size: 0.6875rem;
+  font-weight: var(--font-weight-medium);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--text-secondary);
+}
+
+.app-shell__scenarios-hint {
+  margin: 0 0 var(--space-12);
+  font-size: 0.75rem;
+  line-height: 1.45;
+  color: var(--text-secondary);
+}
+
+.app-shell__meta {
+  font-size: 0.75rem;
+  line-height: 1.4;
+  color: var(--text-secondary);
+}
+.app-shell__meta--spaced { margin-top: var(--space-12); }
+
+.app-shell__action-msg {
+  margin: var(--space-8) 0 0;
+  font-size: 0.75rem;
+  line-height: 1.4;
+  color: var(--text-secondary);
+}
+
+/* Scenario button stack */
+.app-shell__actions {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-8);
+  margin-top: var(--space-12);
+}
+
+.app-shell__btn {
+  width: 100%;
+  box-sizing: border-box;
+  font-family: var(--font-family);
+  font-size: 0.75rem;
+  font-weight: var(--font-weight-medium);
+  padding: var(--space-8) var(--space-12);
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border-primary);
+  background: var(--bg-secondary);
+  color: var(--text-primary);
+  cursor: pointer;
+  text-align: left;
+  letter-spacing: -0.01em;
+}
+
+.app-shell__btn:hover:not(:disabled) {
+  border-color: var(--neutral-300);
+  background: var(--bg-tertiary);
+}
+
+/* Primary — teal-600 fill */
+.app-shell__btn--primary {
+  background: var(--teal-primary);
+  border-color: var(--teal-primary);
+  color: var(--text-primary);
+}
+.app-shell__btn--primary:hover:not(:disabled) {
+  filter: brightness(0.96);
+}
+
+.app-shell__btn:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+
+/* ── Device column ── */
+.app-shell__device-col {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.app-shell__device-kicker {
+  margin: 0 0 var(--space-8);
+  font-size: 0.6875rem;
+  font-weight: var(--font-weight-medium);
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--text-secondary);
+  text-align: center;
+}
+
+/* ── Responsive: stack on small viewports ── */
+@media (max-width: 680px) {
+  .app-shell__body {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .app-shell__scenarios {
+    position: static;
+    flex: 1 1 auto;
+  }
+  .app-shell__device-col {
+    align-items: stretch;
+  }
 }

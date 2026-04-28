@@ -1,37 +1,57 @@
+/**
+ * PortfolioAllocationWidget — MLDS 4.0
+ * Rendered inside a padded Card in ManagedInvestingDashboard.
+ */
+
 .portfolio-widget__header {
   display: flex;
   align-items: flex-start;
   justify-content: space-between;
   gap: var(--space-12);
-  margin-bottom: var(--space-16);
+  margin-bottom: var(--space-12);
 }
 
+/* Title 3.0/Small 16px/24px */
 .portfolio-widget__title {
   margin: 0;
-  font-size: 1rem;
-  font-weight: 600;
-  line-height: 1.35;
-  letter-spacing: -0.02em;
+  font-size: 1.125rem;
+  font-weight: var(--font-weight-medium);
+  line-height: 1.5rem;
+  letter-spacing: -0.01em;
+  color: var(--text-primary);
 }
 
+/* Body 3.0/Small 12px/18px */
 .portfolio-widget__explainer {
-  margin: var(--space-8) 0 0;
-  max-width: 16rem;
+  margin: var(--space-4) 0 0;
   font-size: 0.75rem;
-  line-height: 1.4;
-  color: var(--color-text-muted);
+  line-height: 1.125rem;
+  letter-spacing: -0.01em;
+  color: var(--text-secondary);
 }
 
+/* "Manage" — secondary neutral pill — matches Figma Button 3.0 #eee */
 .portfolio-widget__manage {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   flex-shrink: 0;
+  height: 32px;
+  padding: 6px var(--space-16);
+  font-family: var(--font-family);
   font-size: 0.875rem;
-  font-weight: 600;
-  color: var(--color-accent);
+  font-weight: var(--font-weight-medium);
+  letter-spacing: -0.01em;
+  line-height: 1.25rem;
+  color: var(--text-primary);
+  background: var(--neutral-200);
+  border-radius: var(--radius-full);
   text-decoration: none;
 }
 
 .portfolio-widget__manage:hover {
-  text-decoration: underline;
+  text-decoration: none;
+  filter: brightness(0.96);
 }
 
 .portfolio-widget__row {
@@ -40,6 +60,7 @@
   flex-wrap: wrap;
   align-items: flex-start;
   gap: var(--space-16);
+  margin-top: var(--space-20);
 }
 
 .portfolio-widget__copy {
@@ -51,15 +72,18 @@
   margin-top: 0;
 }
 
+/* "View holdings and overlap" — Link 3.0 */
 .portfolio-widget__holdings-link {
   display: inline-flex;
-  margin-top: var(--space-12);
-  font-size: 0.8125rem;
-  font-weight: 600;
-  color: var(--color-accent);
-  text-decoration: none;
+  margin-top: var(--space-16);
+  font-size: 0.875rem;
+  font-weight: var(--font-weight-medium);
+  line-height: 1.25rem;
+  letter-spacing: -0.01em;
+  color: var(--text-secondary);
+  text-decoration: underline;
 }
 
 .portfolio-widget__holdings-link:hover {
-  text-decoration: underline;
+  color: var(--text-primary);
 }

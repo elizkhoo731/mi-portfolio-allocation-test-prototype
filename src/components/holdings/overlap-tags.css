@@ -4,14 +4,15 @@
   gap: var(--space-8);
 }
 
+/* Badge 3.0 — teal tint */
 .overlap-tags__tag {
   display: inline-flex;
   align-items: center;
   padding: 2px var(--space-8);
-  border-radius: var(--radius-full, 999px);
-  background: var(--color-accent-muted);
-  color: var(--color-text);
+  border-radius: var(--radius-full);
+  background: var(--bg-accent);
+  color: var(--text-primary);
   font-size: 0.75rem;
-  font-weight: 600;
+  font-weight: var(--font-weight-medium);
   line-height: 1.3;
 }

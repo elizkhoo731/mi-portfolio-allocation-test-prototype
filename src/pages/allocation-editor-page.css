@@ -4,24 +4,27 @@
   gap: var(--space-16);
 }
 
+/* Link 3.0 */
 .allocation-editor-preview__back {
   font-size: 0.875rem;
-  font-weight: 600;
-  color: var(--color-accent);
-  text-decoration: none;
+  font-weight: var(--font-weight-medium);
+  color: var(--text-secondary);
+  text-decoration: underline;
   align-self: flex-start;
 }
 
 .allocation-editor-preview__back:hover {
-  text-decoration: underline;
+  color: var(--text-primary);
 }
 
+/* Title Md */
 .allocation-editor-preview__title {
   margin: 0;
   font-size: 1.125rem;
-  font-weight: 600;
+  font-weight: var(--font-weight-medium);
   line-height: 1.35;
   letter-spacing: -0.02em;
+  color: var(--text-primary);
 }
 
 .allocation-editor-preview__lock {
@@ -29,34 +32,36 @@
   padding: var(--space-12);
   border-radius: var(--radius-md);
   background: var(--bg-warning);
+  border: 1px solid var(--border-warning);
   font-size: 0.875rem;
   line-height: 1.45;
+  color: var(--text-primary);
 }
 
 .allocation-editor-preview__empty {
   margin: 0;
   font-size: 0.875rem;
   line-height: 1.45;
-  color: var(--color-text-muted);
+  color: var(--text-secondary);
 }
 
 .allocation-editor-preview__preset-error {
   margin: 0;
   font-size: 0.8125rem;
   line-height: 1.45;
-  color: #ce293f;
+  color: var(--color-negative);
 }
 
 .allocation-editor-preview__status {
   margin: 0;
   font-size: 0.8125rem;
   line-height: 1.45;
-  color: var(--color-text-muted);
+  color: var(--text-secondary);
 }
 
 .allocation-editor-preview__status--ok {
-  color: var(--color-accent);
-  font-weight: 600;
+  color: var(--color-positive-text);
+  font-weight: var(--font-weight-medium);
 }
 
 .allocation-editor-preview__core {
@@ -65,55 +70,55 @@
   gap: var(--space-8);
   padding: var(--space-12);
   border-radius: var(--radius-md);
-  border: 1px solid var(--border-primary, rgba(0, 0, 0, 0.08));
-  background: rgba(0, 0, 0, 0.02);
+  border: 1px solid var(--border-primary);
+  background: var(--bg-tertiary);
 }
 
 .allocation-editor-preview__core-label {
   margin: 0;
   font-size: 0.75rem;
-  font-weight: 600;
+  font-weight: var(--font-weight-medium);
   letter-spacing: 0.05em;
   text-transform: uppercase;
-  color: var(--color-text-muted);
+  color: var(--text-secondary);
 }
 
 .allocation-editor-preview__core-intro {
   margin: 0;
   font-size: 0.8125rem;
   line-height: 1.45;
-  color: var(--color-text-muted);
+  color: var(--text-secondary);
 }
 
 .allocation-editor-preview__core-mix {
   margin: 0;
   font-size: 0.8125rem;
-  font-weight: 600;
-  color: var(--color-text);
+  font-weight: var(--font-weight-medium);
+  color: var(--text-primary);
 }
 
 .allocation-editor-preview__select {
   font-family: var(--font-family);
   font-size: 0.875rem;
-  font-weight: 600;
-  padding: var(--space-8) var(--space-8);
+  font-weight: var(--font-weight-medium);
+  padding: var(--space-8);
   border-radius: var(--radius-md);
-  border: 1px solid rgba(0, 0, 0, 0.12);
-  background: var(--color-surface);
-  color: var(--color-text);
+  border: 1px solid var(--border-primary);
+  background: var(--bg-secondary);
+  color: var(--text-primary);
 }
 
 .allocation-editor-preview__theme-note {
   margin: 0;
   font-size: 0.8125rem;
   line-height: 1.45;
-  color: var(--color-text-muted);
+  color: var(--text-secondary);
 }
 
 .allocation-editor-preview__core-error {
   margin: 0;
   font-size: 0.8125rem;
-  color: #ce293f;
+  color: var(--color-negative);
 }
 
 .sr-only {

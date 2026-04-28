@@ -16,7 +16,7 @@
 .segment-legend__dot {
   width: 10px;
   height: 10px;
-  border-radius: var(--radius-full, 999px);
+  border-radius: var(--radius-full);
   margin-top: 5px;
   flex-shrink: 0;
 }
@@ -35,27 +35,28 @@
   line-height: 1.35;
 }
 
+/* Label 3.0/Large 14px/20px */
 .segment-legend__label {
-  color: var(--color-text);
-  font-weight: 500;
+  color: var(--text-primary);
+  font-weight: var(--font-weight-medium);
 }
 
 .segment-legend__pct {
-  font-weight: 700;
-  color: var(--color-text);
+  font-weight: var(--font-weight-medium);
+  color: var(--text-primary);
   flex-shrink: 0;
 }
 
 .segment-legend__track {
   margin-top: var(--space-8);
   height: 4px;
-  border-radius: var(--radius-full, 999px);
-  background: rgba(0, 0, 0, 0.06);
+  border-radius: var(--radius-full);
+  background: var(--border-primary);
   overflow: hidden;
 }
 
 .segment-legend__fill {
   height: 100%;
-  border-radius: var(--radius-full, 999px);
+  border-radius: var(--radius-full);
   max-width: 100%;
 }

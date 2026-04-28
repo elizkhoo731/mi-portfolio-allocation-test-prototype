@@ -21,10 +21,10 @@
 .home-page__scenarios-title {
   margin: 0 0 var(--space-8);
   font-size: 0.75rem;
-  font-weight: 600;
+  font-weight: var(--font-weight-medium);
   letter-spacing: 0.06em;
   text-transform: uppercase;
-  color: var(--color-text-muted);
+  color: var(--text-secondary);
 }
 
 .home-page__card {
@@ -33,14 +33,14 @@
 
 .mobile-device__inner .home-page__card {
   box-shadow: none;
-  border: 1px solid rgba(0, 0, 0, 0.06);
+  border: 1px solid var(--border-primary);
 }
 
 .home-page__meta {
   margin: var(--space-12) 0 0;
   font-size: 0.8125rem;
   line-height: 1.4;
-  color: var(--color-text-muted);
+  color: var(--text-secondary);
 }
 
 .home-page__meta--spaced {
@@ -62,23 +62,23 @@
 .home-page__btn {
   font-family: var(--font-family);
   font-size: 0.8125rem;
-  font-weight: 600;
+  font-weight: var(--font-weight-medium);
   padding: var(--space-8) var(--space-12);
   border-radius: var(--radius-md);
-  border: 1px solid rgba(0, 0, 0, 0.12);
-  background: var(--color-surface);
-  color: var(--color-text);
+  border: 1px solid var(--neutral-300);
+  background: var(--bg-secondary);
+  color: var(--text-primary);
   cursor: pointer;
 }
 
 .home-page__btn:hover {
-  border-color: rgba(0, 0, 0, 0.2);
+  border-color: color-mix(in srgb, var(--text-primary) 24%, var(--neutral-300));
 }
 
 .home-page__btn--primary {
   background: var(--color-accent);
   border-color: var(--color-accent);
-  color: #fff;
+  color: #ffffff;
 }
 
 .home-page__btn--primary:hover {
@@ -92,22 +92,23 @@
 
 .home-page__sheet-demo {
   margin: 0;
-  color: var(--color-text);
+  color: var(--text-primary);
 }
 
 .home-page__hint {
   margin: 0;
   font-size: 0.8125rem;
   line-height: 1.45;
-  color: var(--color-text-muted);
+  color: var(--text-secondary);
 }
 
 .home-page__alert {
   margin: 0 0 var(--space-16);
   padding: var(--space-12);
   border-radius: var(--radius-md);
-  background: #ffebed;
-  color: #330007;
+  border: 1px solid color-mix(in srgb, var(--color-negative) 24%, transparent);
+  background: var(--bg-negative);
+  color: var(--color-negative);
   font-size: 0.875rem;
 }
 
@@ -115,7 +116,7 @@
   margin: var(--space-12) 0 0;
   font-size: 0.8125rem;
   line-height: 1.4;
-  color: var(--color-text-muted);
+  color: var(--text-secondary);
 }
 
 .home-page__device-col {
@@ -128,10 +129,10 @@
 .home-page__device-kicker {
   margin: 0 0 var(--space-12);
   font-size: 0.75rem;
-  font-weight: 600;
+  font-weight: var(--font-weight-medium);
   letter-spacing: 0.04em;
   text-transform: uppercase;
-  color: var(--color-text-muted);
+  color: var(--text-secondary);
 }
 
 @media (max-width: 720px) {

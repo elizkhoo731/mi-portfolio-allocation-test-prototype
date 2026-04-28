@@ -6,7 +6,7 @@ import {
 } from "@/lib/allocation";
 import type { DonutSegment, ThemeId } from "@/types/portfolio";
 
-const CORE_COLOR = "#1D9E75";
+const CORE_COLOR = "#006657";
 
 /**
  * Donut segments for a preset card mini preview (theme order preserved).

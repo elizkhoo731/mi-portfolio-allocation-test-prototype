@@ -19,25 +19,26 @@
   border-radius: var(--radius-md);
   font-family: var(--font-family);
   font-size: 0.875rem;
-  font-weight: 600;
+  font-weight: var(--font-weight-medium);
   line-height: 1.4;
+  letter-spacing: -0.02em;
   box-shadow: var(--shadow-sm);
-  border: 1px solid var(--border-primary, rgba(0, 0, 0, 0.08));
+  border: 1px solid var(--border-primary);
 }
 
 .ml-toast--success {
-  background: color-mix(in srgb, var(--color-accent) 14%, var(--color-surface));
+  background: color-mix(in srgb, var(--color-accent) 14%, var(--bg-secondary));
   border-color: color-mix(in srgb, var(--color-accent) 35%, transparent);
-  color: var(--color-text);
+  color: var(--text-primary);
 }
 
 .ml-toast--error {
-  background: #fff5f5;
-  border-color: rgba(206, 41, 63, 0.35);
-  color: #5c1420;
+  background: var(--bg-negative);
+  border-color: color-mix(in srgb, var(--color-negative) 35%, transparent);
+  color: var(--color-negative);
 }
 
 .ml-toast--info {
-  background: var(--color-surface);
-  color: var(--color-text);
+  background: var(--bg-secondary);
+  color: var(--text-primary);
 }

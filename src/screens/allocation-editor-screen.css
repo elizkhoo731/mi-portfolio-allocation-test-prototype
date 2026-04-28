@@ -7,10 +7,10 @@
 .editor-screen__section-label {
   margin: 0 0 var(--space-8);
   font-size: 0.75rem;
-  font-weight: 600;
+  font-weight: var(--font-weight-medium);
   letter-spacing: 0.05em;
   text-transform: uppercase;
-  color: var(--color-text-muted);
+  color: var(--text-secondary);
 }
 
 .editor-screen__theme-list {
@@ -25,8 +25,8 @@
 .editor-screen__theme-row {
   padding: var(--space-12);
   border-radius: var(--radius-md);
-  border: 1px solid var(--border-primary, rgba(0, 0, 0, 0.08));
-  background: var(--color-surface);
+  border: 1px solid var(--border-primary);
+  background: var(--bg-secondary);
 }
 
 .editor-screen__theme-select-label {
@@ -44,7 +44,7 @@
   width: 1.125rem;
   height: 1.125rem;
   flex-shrink: 0;
-  accent-color: var(--color-accent, #006657);
+  accent-color: var(--color-accent);
 }
 
 .editor-screen__theme-row-body {
@@ -56,14 +56,16 @@
   text-align: left;
 }
 
+/* Title Sm 16px/24px */
 .editor-screen__theme-meta {
   font-size: 0.875rem;
-  font-weight: 600;
+  font-weight: var(--font-weight-medium);
+  color: var(--text-primary);
 }
 
 .editor-screen__theme-pct {
-  color: var(--color-text-muted);
-  font-weight: 600;
+  color: var(--text-secondary);
+  font-weight: var(--font-weight-medium);
 }
 
 .editor-screen__bulk-remove-toolbar {
@@ -78,8 +80,8 @@
 .editor-screen__bulk-remove-link {
   font-family: var(--font-family);
   font-size: 0.8125rem;
-  font-weight: 600;
-  color: var(--color-accent);
+  font-weight: var(--font-weight-medium);
+  color: var(--text-secondary);
   background: transparent;
   border: none;
   padding: var(--space-4) 0;
@@ -93,13 +95,14 @@
   text-decoration: none;
 }
 
+/* Negative / destructive — Button 3.0 */
 .editor-screen__bulk-remove-primary {
   margin-left: auto;
   font-family: var(--font-family);
   font-size: 0.8125rem;
-  font-weight: 600;
-  color: #fff;
-  background: #ce293f;
+  font-weight: var(--font-weight-medium);
+  color: #ffffff;
+  background: var(--color-negative);
   border: none;
   border-radius: var(--radius-md);
   padding: var(--space-8) var(--space-12);
@@ -116,27 +119,32 @@
   padding-left: 1.1rem;
   font-size: 0.875rem;
   line-height: 1.45;
-  color: var(--color-text);
+  color: var(--text-primary);
 }
 
 .editor-screen__core-line {
   margin: var(--space-16) 0;
   font-size: 0.9375rem;
-  font-weight: 600;
-  color: var(--color-text);
+  font-weight: var(--font-weight-medium);
+  color: var(--text-primary);
 }
 
+/* Button 3.0 Large — Teal-600 primary */
 .editor-screen__update {
   margin-top: var(--space-16);
   width: 100%;
+  box-sizing: border-box;
+  min-height: 48px;
   font-family: var(--font-family);
-  font-size: 0.9375rem;
-  font-weight: 600;
-  padding: var(--space-12) var(--space-16);
-  border-radius: var(--radius-md);
+  font-size: 1rem;
+  font-weight: var(--font-weight-medium);
+  line-height: 1.5rem;
+  letter-spacing: -0.01em;
+  padding: var(--space-12) var(--space-24);
+  border-radius: var(--radius-full);
   border: none;
-  background: var(--color-accent);
-  color: #fff;
+  background: var(--teal-primary);
+  color: var(--text-primary);
   cursor: pointer;
 }
 
@@ -155,21 +163,21 @@
 .editor-screen__sheet-btn {
   font-family: var(--font-family);
   font-size: 0.875rem;
-  font-weight: 600;
+  font-weight: var(--font-weight-medium);
   padding: var(--space-12) var(--space-16);
   border-radius: var(--radius-md);
-  border: 1px solid rgba(0, 0, 0, 0.12);
+  border: 1px solid var(--border-primary);
   cursor: pointer;
 }
 
 .editor-screen__sheet-btn--primary {
-  background: var(--color-surface);
-  border-color: rgba(0, 0, 0, 0.2);
-  color: var(--color-text);
+  background: var(--bg-secondary);
+  border-color: var(--neutral-300);
+  color: var(--text-primary);
 }
 
 .editor-screen__sheet-btn--destructive {
   background: transparent;
-  border-color: #ce293f;
-  color: #ce293f;
+  border-color: var(--color-negative);
+  color: var(--color-negative);
 }

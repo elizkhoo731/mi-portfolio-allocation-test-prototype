@@ -47,6 +47,6 @@ export const THEME_CATALOGUE: readonly ThemeCatalogueItem[] = [
       "aggressive",
       "equity_only",
     ],
-    color: "#1D9E75",
+    color: "#0EA5E9",
   },
 ] as const;

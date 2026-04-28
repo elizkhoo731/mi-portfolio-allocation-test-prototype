@@ -2,7 +2,7 @@ import { riskLevelDisplayName } from "@/constants/riskLevelDisplay";
 import type { CoreAllocation, ThemeAllocation } from "@/types/portfolio";
 import "@/components/portfolio/segment-legend.css";
 
-const CORE_LEGEND_COLOR = "#1D9E75";
+const CORE_LEGEND_COLOR = "#006657";
 
 export type SegmentLegendProps = {
   coreAllocation: CoreAllocation;

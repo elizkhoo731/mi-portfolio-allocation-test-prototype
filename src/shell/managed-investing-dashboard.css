@@ -1,0 +1,503 @@
+/**
+ * Managed Investing Dashboard — MLDS 4.0
+ * Figma: 2felRWyxTjU3AiiLVaS9yz / node 24068:309257
+ */
+
+/* ── Page container ── */
+.mi-dash {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-20);
+  /* horizontal padding added via margin trick in mobile-device-frame.css */
+  padding: var(--space-16) var(--space-16) var(--space-32);
+  background: var(--bg-primary);
+  min-height: 100%;
+  box-sizing: border-box;
+}
+
+/* ── Full Header 3.0 — 56px topbar ── */
+.mi-dash__topbar {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  min-height: 56px;
+  padding: 0;
+}
+
+/* 48px touch target icon button */
+.mi-dash__icon-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  background: transparent;
+  border: none;
+  border-radius: var(--radius-full);
+  color: var(--text-primary);
+  cursor: pointer;
+}
+.mi-dash__icon-btn:hover { background: var(--border-primary); }
+
+/* ── Page Title 3.0 ── */
+.mi-dash__title-block { margin-top: calc(-1 * var(--space-8)); }
+
+/* Headline 3.0/Large — prototype uses Headline Md size */
+.mi-dash__screen-title {
+  margin: 0;
+  font-size: 1.5rem;
+  font-weight: var(--font-weight-medium);
+  line-height: 1.75rem;
+  letter-spacing: -0.02em;
+  color: var(--text-primary);
+}
+
+/* Body 3.0/Medium — Account sub */
+.mi-dash__account-sub {
+  margin: var(--space-4) 0 0;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  letter-spacing: -0.02em;
+  color: var(--text-secondary);
+}
+
+/* ── Summary card ── */
+.mi-dash__summary-card { padding: 0; overflow: hidden; }
+
+.mi-dash__summary-header { padding: var(--space-16) var(--space-16) 0; }
+
+/* Headline 3.0/Large 36px/44px */
+.mi-dash__balance {
+  margin: 0;
+  font-size: 2.25rem;
+  font-weight: var(--font-weight-medium);
+  line-height: 2.75rem;
+  letter-spacing: -0.03em;
+  color: var(--text-primary);
+}
+
+/* Body 3.0/Medium — delta */
+.mi-dash__delta {
+  margin: var(--space-4) 0 0;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  letter-spacing: -0.02em;
+  color: var(--text-secondary);
+}
+.mi-dash__delta-arrow { color: var(--color-positive-text); }
+
+/* Tabs 3.0 — 48px height, underline active */
+.mi-dash__tabs {
+  display: flex;
+  border-bottom: 1px solid var(--border-primary);
+  margin-top: var(--space-12);
+}
+.mi-dash__tab {
+  flex: 1 1 0;
+  min-height: 48px;
+  padding: 0 var(--space-12);
+  font-family: var(--font-family);
+  font-size: 0.875rem;
+  font-weight: var(--font-weight-medium);
+  letter-spacing: -0.01em;
+  color: rgba(0, 0, 0, 0.32);
+  background: transparent;
+  border: none;
+  border-bottom: 2px solid transparent;
+  margin-bottom: -1px;
+  cursor: pointer;
+}
+.mi-dash__tab--active {
+  color: var(--text-primary);
+  border-bottom-color: var(--text-primary);
+}
+
+/* Area chart */
+.mi-dash__spark {
+  display: block;
+  width: 100%;
+  height: 120px;
+  margin: var(--space-8) 0 0;
+}
+
+/* Range chips — Figma Chip 3.0 / Btn toggle */
+.mi-dash__ranges {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 var(--space-16) var(--space-16);
+  margin-top: 0;
+}
+.mi-dash__range {
+  height: 32px;
+  padding: 6px var(--space-16);
+  font-family: var(--font-family);
+  font-size: 0.875rem;
+  font-weight: var(--font-weight-medium);
+  letter-spacing: -0.01em;
+  color: var(--text-primary);
+  background: transparent;
+  border: none;
+  border-radius: var(--radius-full);
+  cursor: pointer;
+  white-space: nowrap;
+}
+.mi-dash__range--active {
+  background: var(--text-primary);
+  color: var(--bg-secondary);
+}
+
+/* Allocations placeholder */
+.mi-dash__alloc-hint {
+  margin: var(--space-16) var(--space-16) var(--space-12);
+  font-size: 0.875rem;
+  color: var(--text-secondary);
+}
+.mi-dash__link {
+  color: var(--text-secondary);
+  font-weight: var(--font-weight-medium);
+  text-decoration: underline;
+}
+
+/* Button 3.0 pair — 48px height, Teal-600 + #eee */
+.mi-dash__hero-ctas {
+  display: flex;
+  gap: var(--space-8);
+  padding: 0 var(--space-16) var(--space-16);
+  margin-top: var(--space-8);
+}
+.mi-dash__btn-primary,
+.mi-dash__btn-secondary {
+  flex: 1 1 0;
+  min-height: 48px;
+  padding: var(--space-12) var(--space-24);
+  font-family: var(--font-family);
+  font-size: 1rem;
+  font-weight: var(--font-weight-medium);
+  line-height: 1.5rem;
+  letter-spacing: -0.01em;
+  border-radius: var(--radius-full);
+  border: none;
+  cursor: pointer;
+}
+.mi-dash__btn-primary { background: var(--teal-primary); color: var(--text-primary); }
+.mi-dash__btn-secondary { background: var(--neutral-200); color: var(--text-primary); }
+
+/* ── MoneyLion AI card ── */
+.mi-dash__ai-card { padding: var(--space-16); gap: var(--space-16); display: flex; flex-direction: column; }
+
+.mi-dash__ai-head {
+  display: flex;
+  align-items: center;
+  gap: var(--space-8);
+}
+
+/* AI icon placeholder (would use actual SVG asset in production) */
+.mi-dash__ai-icon {
+  font-size: 1.25rem;
+  color: var(--teal-primary);
+  line-height: 1;
+}
+
+/* Title Sm 16px */
+.mi-dash__ai-brand {
+  font-size: 1rem;
+  font-weight: var(--font-weight-medium);
+  line-height: 1.5rem;
+  letter-spacing: -0.01em;
+  color: var(--text-primary);
+}
+
+/* Badge 3.0 — accent teal bg */
+.mi-dash__ai-badge {
+  font-size: 0.625rem;
+  font-weight: var(--font-weight-medium);
+  letter-spacing: 0.04em;
+  color: var(--text-primary);
+  background: var(--bg-accent);
+  border: 1px solid var(--border-accent);
+  border-radius: 6px;
+  padding: 2px 5px;
+}
+
+/* Body 3.0/Large 16px */
+.mi-dash__ai-body {
+  margin: 0;
+  font-size: 1rem;
+  line-height: 1.5rem;
+  letter-spacing: -0.02em;
+  color: var(--text-primary);
+}
+.mi-dash__ai-more {
+  font-weight: var(--font-weight-medium);
+  text-decoration: underline;
+  cursor: pointer;
+  color: var(--text-primary);
+}
+
+/* ── Portfolio card — wraps PortfolioAllocationWidget ── */
+.mi-dash__portfolio-card {
+  padding: var(--space-20);
+  overflow: hidden;
+}
+
+/* ── Feature grid — two separate white cards with gap matching Figma 17px ── */
+.mi-dash__feature-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 17px;
+}
+.mi-dash__feature {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 144px;
+  padding: var(--space-16) var(--space-16) var(--space-12);
+}
+
+.mi-dash__feature-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: var(--space-4);
+}
+
+/* Title Sm 16px */
+.mi-dash__feature-title {
+  margin: 0;
+  font-size: 1rem;
+  font-weight: var(--font-weight-medium);
+  line-height: 1.5rem;
+  letter-spacing: -0.01em;
+  color: var(--text-primary);
+}
+
+.mi-dash__feature-icon {
+  font-size: 1.125rem;
+  color: var(--text-secondary);
+  line-height: 1;
+}
+
+/* Body 3.0/Small 12px */
+.mi-dash__feature-desc {
+  flex: 1;
+  margin: 0 0 var(--space-12);
+  font-size: 0.75rem;
+  line-height: 1.125rem;
+  letter-spacing: -0.01em;
+  color: var(--text-secondary);
+}
+
+/* Badge 3.0 — positive green (ENABLED) from Figma: bg #defae6, border #adf0c0 */
+.mi-dash__feature-badge {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 24px;
+  font-family: var(--font-family);
+  font-size: 0.75rem;
+  font-weight: var(--font-weight-medium);
+  letter-spacing: -0.01em;
+  color: var(--text-primary);
+  background: var(--bg-positive);
+  border: 1px solid var(--border-positive);
+  border-radius: 6px;
+}
+
+/* ── Shared card structure ── */
+
+/* Pill button (secondary neutral) — matches Figma Button 3.0 #eee bg */
+.mi-dash__pill-btn {
+  flex-shrink: 0;
+  height: 32px;
+  padding: 6px var(--space-16);
+  font-family: var(--font-family);
+  font-size: 0.875rem;
+  font-weight: var(--font-weight-medium);
+  letter-spacing: -0.01em;
+  color: var(--text-primary);
+  background: var(--neutral-200);
+  border: none;
+  border-radius: var(--radius-full);
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+/* Card-internal header row */
+.mi-dash__card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-8);
+  padding: var(--space-16);
+  overflow: hidden;
+}
+
+/* Title 3.0/Medium 18px */
+.mi-dash__card-title {
+  flex: 1;
+  margin: 0;
+  font-size: 1.125rem;
+  font-weight: var(--font-weight-medium);
+  line-height: 1.5rem;
+  letter-spacing: -0.01em;
+  color: var(--text-primary);
+}
+
+/* Shared list card */
+.mi-dash__list-card {
+  padding: 0;
+  overflow: hidden;
+}
+.mi-dash__list-card--last { margin-bottom: var(--space-8); }
+
+/* ── Transaction list rows ── */
+.mi-dash__tx-row {
+  display: flex;
+  align-items: center;
+  gap: var(--space-16);
+  min-height: 56px;
+  padding-left: var(--space-16);
+}
+.mi-dash__tx-row--bordered { border-bottom: 1px solid var(--border-primary); }
+
+/* Figma Circle+Icon 3.0 — 40px teal circle */
+.mi-dash__tx-circle {
+  flex-shrink: 0;
+  width: 40px;
+  height: 40px;
+  border-radius: var(--radius-full);
+  background: var(--teal-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.mi-dash__tx-body { flex: 1; min-width: 0; }
+
+/* Body 3.0/Large 16px */
+.mi-dash__tx-label {
+  margin: 0;
+  font-size: 1rem;
+  line-height: 1.5rem;
+  letter-spacing: -0.02em;
+  color: var(--text-primary);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* Body 3.0/Medium 14px */
+.mi-dash__tx-sub {
+  margin: 0;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  letter-spacing: -0.02em;
+  color: var(--text-secondary);
+}
+
+/* Amount — right-aligned, Figma uses content-positive #00ce3a / content-negative */
+.mi-dash__tx-amt {
+  flex-shrink: 0;
+  padding: var(--space-16) var(--space-16) var(--space-16) 0;
+  font-size: 0.875rem;
+  font-weight: 400;
+  letter-spacing: -0.02em;
+  font-variant-numeric: tabular-nums;
+  text-align: right;
+  white-space: nowrap;
+}
+.mi-dash__tx-amt--pos { color: var(--color-positive-text); }
+.mi-dash__tx-amt--neg { color: var(--color-negative); }
+
+/* ── Watchlist rows ── */
+.mi-dash__watch-row {
+  display: flex;
+  align-items: center;
+  gap: var(--space-12);
+  padding: var(--space-12) var(--space-16);
+}
+.mi-dash__watch-row--bordered { border-bottom: 1px solid var(--border-primary); }
+
+/* Vanguard-style brand logo circle */
+.mi-dash__watch-logo {
+  flex-shrink: 0;
+  width: 40px;
+  height: 40px;
+  border-radius: var(--radius-full);
+  background: #cc0000;
+  color: #ffffff;
+  font-size: 1.125rem;
+  font-weight: var(--font-weight-medium);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.mi-dash__watch-body { flex: 1; min-width: 0; }
+.mi-dash__watch-name {
+  margin: 0;
+  font-size: 0.875rem;
+  font-weight: var(--font-weight-medium);
+  color: var(--text-primary);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.mi-dash__watch-right {
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: var(--space-4);
+}
+.mi-dash__watch-spark { width: 60px; height: 20px; }
+.mi-dash__watch-price {
+  margin: 0;
+  font-size: 0.8125rem;
+  font-weight: var(--font-weight-medium);
+  font-variant-numeric: tabular-nums;
+  color: var(--text-primary);
+}
+
+/* ── News rows ── */
+.mi-dash__news-row { padding: var(--space-12) var(--space-16); }
+.mi-dash__news-row--bordered { border-bottom: 1px solid var(--border-primary); }
+
+.mi-dash__news-meta {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: var(--space-4);
+  margin-bottom: var(--space-4);
+}
+
+/* Label Sm */
+.mi-dash__news-source {
+  font-size: 0.75rem;
+  font-weight: var(--font-weight-medium);
+  color: var(--text-primary);
+}
+.mi-dash__news-dot { color: var(--text-secondary); font-size: 0.75rem; }
+.mi-dash__news-time { font-size: 0.75rem; color: var(--text-secondary); }
+
+/* Sentiment badge — positive green */
+.mi-dash__news-sentiment-badge {
+  font-size: 0.625rem;
+  font-weight: var(--font-weight-medium);
+  letter-spacing: 0.03em;
+  color: var(--text-primary);
+  background: var(--bg-positive);
+  border: 1px solid var(--border-positive);
+  border-radius: 6px;
+  padding: 2px var(--space-8);
+}
+
+/* Body 3.0/Medium */
+.mi-dash__news-headline {
+  margin: 0;
+  font-size: 0.875rem;
+  line-height: 1.35;
+  color: var(--text-primary);
+}

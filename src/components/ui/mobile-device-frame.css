@@ -1,18 +1,16 @@
 /**
- * Mobile prototype viewport (MLDS: 390px logical width, 16px horizontal inset).
- * See docs/MLDS-4_0-Reference.md — Mobile Phone Frame.
+ * Mobile prototype viewport — MLDS 375×812px.
  */
 
 .mobile-device {
   position: relative;
-  width: 100%;
-  max-width: 390px;
-  margin: 0 auto;
-  min-height: min(736px, 86vh);
-  background: var(--bg-primary, var(--color-bg));
-  border-radius: 24px;
-  border: 1px solid var(--border-primary, rgba(0, 0, 0, 0.08));
-  box-shadow: var(--shadow-md, 0 4px 12px rgba(0, 0, 0, 0.08));
+  width: 375px;
+  flex-shrink: 0;
+  height: 812px;
+  background: var(--bg-primary);
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border-primary);
+  box-shadow: var(--shadow-md);
   overflow: hidden;
   display: flex;
   flex-direction: column;
@@ -23,6 +21,24 @@
   flex: 1;
   min-height: 0;
   overflow-y: auto;
-  padding: var(--space-16) var(--space-16) var(--space-24);
+  overflow-x: hidden;
+  /* default padding for sub-pages that don't manage their own */
+  padding: var(--space-16);
   -webkit-overflow-scrolling: touch;
+  scrollbar-width: thin;
+  scrollbar-color: var(--border-primary) transparent;
+}
+
+.mobile-device__inner::-webkit-scrollbar { width: 4px; }
+.mobile-device__inner::-webkit-scrollbar-track { background: transparent; }
+.mobile-device__inner::-webkit-scrollbar-thumb {
+  background: var(--border-primary);
+  border-radius: var(--radius-full);
+}
+
+/* MI dashboard manages its own padding and full-bleed bg */
+.mobile-device__inner > .mi-dash {
+  margin: calc(-1 * var(--space-16));
+  width: calc(100% + 2 * var(--space-16));
+  min-width: 0;
 }

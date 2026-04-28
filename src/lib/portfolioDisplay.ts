@@ -1,6 +1,6 @@
 /**
  * Builds donut/legend display from portfolio + rebalance rules (spec §4.1).
- * Core segment color matches product spec (#1D9E75).
+ * Core segment color — MLDS Content/Semantic/Positive (Teal-900).
  */
 
 import { THEME_CATALOGUE } from "@/constants/themeCatalogue";
@@ -12,7 +12,7 @@ import type {
   ThemeId,
 } from "@/types/portfolio";
 
-const CORE_DONUT_COLOR = "#1D9E75";
+const CORE_DONUT_COLOR = "#006657";
 
 function themeMeta(themeId: ThemeId) {
   return THEME_CATALOGUE.find((t) => t.themeId === themeId);

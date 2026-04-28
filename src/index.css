@@ -1,58 +1,131 @@
+/*
+ * MoneyLion Design System — source: colors_and_type.css + MLDS 4.0 Reference.
+ * Baton Turbo loaded from /fonts/ (copied from official ML font package).
+ */
+
+/* ── Baton Turbo @font-face ───────────────────────────────────── */
+@font-face { font-family: "Baton Turbo"; font-weight: 400; font-style: normal;
+  src: url("/fonts/BatonTurbo-Book.otf") format("opentype"); font-display: swap; }
+@font-face { font-family: "Baton Turbo"; font-weight: 400; font-style: italic;
+  src: url("/fonts/BatonTurbo-BookItalic.otf") format("opentype"); font-display: swap; }
+@font-face { font-family: "Baton Turbo"; font-weight: 450; font-style: normal;
+  src: url("/fonts/BatonTurbo-Regular.otf") format("opentype"); font-display: swap; }
+@font-face { font-family: "Baton Turbo"; font-weight: 500; font-style: normal;
+  src: url("/fonts/BatonTurbo-Medium.otf") format("opentype"); font-display: swap; }
+@font-face { font-family: "Baton Turbo"; font-weight: 500; font-style: italic;
+  src: url("/fonts/BatonTurbo-MediumItalic.otf") format("opentype"); font-display: swap; }
+@font-face { font-family: "Baton Turbo"; font-weight: 700; font-style: normal;
+  src: url("/fonts/BatonTurbo-Bold.otf") format("opentype"); font-display: swap; }
+@font-face { font-family: "Baton Turbo"; font-weight: 800; font-style: normal;
+  src: url("/fonts/BatonTurbo-Heavy.otf") format("opentype"); font-display: swap; }
+
 :root {
-  /* MLDS-aligned typography substitute (see docs/MLDS-4_0-Reference.md). */
-  --font-family: "DM Sans", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial,
-    sans-serif;
-  --space-4: 4px;
-  --space-8: 8px;
+  /* ── Font ── */
+  --font-family: "Baton Turbo", ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  /* Baton Turbo: 400=Book, 450=Regular, 500=Medium, 700=Bold, 800=Heavy */
+  --font-weight-regular: 400;
+  --font-weight-medium: 500;   /* Medium — used for labels, buttons, headings */
+
+  /* ── Backgrounds ── */
+  --bg-primary:   #f6f6f6;  /* ml-neutral-100 — page/screen bg */
+  --bg-secondary: #ffffff;  /* ml-neutral-0   — card/surface bg */
+  --bg-tertiary:  #f6f6f6;  /* nested tinted bg */
+
+  /* ── Text ── */
+  --text-primary:   #000000;           /* ml-neutral-1000 */
+  --text-secondary: rgba(0,0,0,0.60);  /* ml-fg-muted */
+  --text-tertiary:  rgba(0,0,0,0.32);  /* ml-fg-subtle — inactive/disabled */
+  --text-disabled:  rgba(0,0,0,0.32);
+
+  /* ── Brand / accent ── */
+  --color-accent:   #00E5C4;  /* ml-teal-600 — BRAND PRIMARY (links, chips, focus) */
+  --teal-primary:   #00E5C4;  /* ml-teal-600 — primary button fill */
+  --teal-mid:       #1EBABA;  /* ml-teal-700 */
+  --teal-dark:      #11937E;  /* ml-teal-800 */
+
+  /* ── Semantic ── */
+  --color-positive:      #11937E;  /* ml-teal-800 — donut/brand positive (non-button) */
+  --color-positive-text: #00CC88;  /* ml-green-success — gain amounts */
+  --color-negative:      #FF5E57;  /* ml-red-500 */
+  --color-warning:       #FFDD59;  /* ml-yellow-500 */
+
+  /* ── Semantic backgrounds ── */
+  --bg-accent:    #B2FCF1;  /* ml-teal-300 — teal tint */
+  --bg-positive:  #defae6;  /* green-100 — enabled badge bg */
+  --bg-negative:  #fccfc5;  /* ml-red-100 */
+  --bg-warning:   #faf5cc;  /* ml-yellow-100 */
+
+  /* ── Borders ── */
+  --border-primary:  #E2E2E2;  /* ml-neutral-300 */
+  --border-accent:   #B2FCF1;  /* ml-teal-300 */
+  --border-positive: #adf0c0;  /* green-200 — enabled badge border */
+  --border-negative: #fabcaf;  /* ml-red-300 */
+  --border-warning:  #f5eb99;  /* ml-yellow-300 */
+
+  /* ── Elevation ── */
+  --shadow-sm: 0 1px 2px rgba(0,0,0,0.06);   /* ml-shadow-sm */
+  --shadow-md: 0 6px 16px rgba(0,0,0,0.08);  /* ml-shadow-md */
+  --shadow-lg: 0 16px 32px rgba(0,0,0,0.10); /* ml-shadow-lg */
+
+  /* ── Radii ── */
+  --radius-xs:   4px;     /* ml-radius-xs */
+  --radius-sm:   8px;     /* ml-radius-sm */
+  --radius-md:   14px;    /* ml-radius-md — card / field */
+  --radius-lg:   20px;    /* ml-radius-lg — device frame */
+  --radius-xl:   24px;    /* ml-radius-xl — dialog */
+  --radius-full: 9999px;  /* ml-radius-pill — ALL buttons */
+
+  /* ── Spacing (8pt grid) ── */
+  --space-4:  4px;
+  --space-8:  8px;
   --space-12: 12px;
   --space-16: 16px;
+  --space-20: 20px;
   --space-24: 24px;
-  --radius-md: 16px;
-  /* Prototype accent from allocation spec / Section_1 reference. */
-  --color-accent: #1d9e75;
-  --color-accent-muted: color-mix(in srgb, var(--color-accent) 12%, white);
-  --color-text: #000000;
-  --color-text-muted: rgba(0, 0, 0, 0.64);
-  --color-surface: #ffffff;
-  --color-bg: #f6f6f6;
-  --bg-primary: #f6f6f6;
-  --radius-card: var(--radius-md);
-  --font-sans: var(--font-family);
-  --bg-warning: #fffce9;
-  --color-warning: #b89f00;
-  --radius-lg: 20px;
-  --border-primary: rgba(0, 0, 0, 0.08);
-  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.06);
-  --overlay: rgba(0, 0, 0, 0.6);
-  --neutral-300: #e2e2e2;
+  --space-32: 32px;
+  --space-40: 40px;
+  --space-48: 48px;
+
+  /* ── Overlay ── */
+  --overlay: rgba(0,0,0,0.60);
+
+  /* ── Primitive neutrals (for direct use where needed) ── */
+  --neutral-200: #EEEEEE;  /* ml-neutral-200 — secondary btn fill */
+  --neutral-300: #E2E2E2;  /* ml-neutral-300 */
+
+  /* ──────────────────────────────────────────────────────────
+   * Legacy aliases — keep so existing component CSS continues
+   * to resolve without touching every file.
+   * ────────────────────────────────────────────────────────── */
+  --color-text:       var(--text-primary);
+  --color-text-muted: var(--text-secondary);
+  --color-surface:    var(--bg-secondary);
+  --color-bg:         var(--bg-primary);
+  --color-accent-muted: color-mix(in srgb, var(--color-accent) 14%, white);
+  --radius-card:      var(--radius-md);
+  --bg-warning-alias: var(--bg-warning);
 }
 
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
-}
-
-html,
-body,
-#root {
-  height: 100%;
-}
+/* ── Resets ── */
+*, *::before, *::after { box-sizing: border-box; }
+html, body, #root { height: 100%; }
 
 body {
   margin: 0;
   font-family: var(--font-family);
-  color: var(--color-text);
-  background: var(--color-bg);
+  font-weight: var(--font-weight-regular);
+  color: var(--text-primary);
+  background: var(--bg-primary);
   line-height: 1.5;
   -webkit-font-smoothing: antialiased;
+  letter-spacing: -0.02em;
 }
 
-a {
-  color: var(--color-accent);
-  text-decoration: none;
-}
+a { color: var(--text-primary); text-decoration: none; }
+a:hover { text-decoration: underline; }
 
-a:hover {
-  text-decoration: underline;
+:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 2px #fff, 0 0 0 4px var(--text-primary);
+  border-radius: var(--radius-full);
 }

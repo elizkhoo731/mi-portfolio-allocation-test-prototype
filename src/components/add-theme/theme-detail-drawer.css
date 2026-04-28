@@ -1,6 +1,6 @@
 /**
- * Tabs: MLDS 4.0 Tabs 3.0 — bar height 48px, full width; active tab uses accent underline.
- * Panel stack: both tabpanels share one grid cell so height matches the taller tab (stable sheet).
+ * Tabs 3.0 — 48px bar, accent-underline active state.
+ * Panel stack keeps sheet height stable across tab switches.
  */
 
 .theme-detail-drawer__tabs-wrap {
@@ -8,14 +8,13 @@
   margin: 0 0 var(--space-12);
 }
 
-/* MLDS: Tabs 3.0 — 375×48px bar (prototype uses full content width); horizontal tab row */
 .theme-detail-drawer__tabs {
   display: flex;
   flex-direction: row;
   flex-wrap: nowrap;
   width: 100%;
   min-height: 48px;
-  border-bottom: 1px solid var(--border-primary, rgba(0, 0, 0, 0.08));
+  border-bottom: 1px solid var(--border-primary);
   gap: 0;
   overflow-x: auto;
   -webkit-overflow-scrolling: touch;
@@ -34,18 +33,16 @@
   padding: 0 var(--space-12);
   font-family: var(--font-family);
   font-size: 0.875rem;
-  font-weight: 600;
+  font-weight: var(--font-weight-medium);
   line-height: 1.25;
   letter-spacing: -0.01em;
-  color: var(--color-text-muted);
+  color: var(--text-secondary);
   background: transparent;
   border: none;
   border-bottom: 2px solid transparent;
   margin-bottom: -1px;
   cursor: pointer;
-  transition:
-    color 0.12s ease,
-    border-color 0.12s ease;
+  transition: color 0.12s ease, border-color 0.12s ease;
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -55,17 +52,16 @@
 }
 
 .theme-detail-drawer__tab--active {
-  color: var(--color-accent, #006657);
-  border-bottom-color: var(--color-accent, #006657);
+  color: var(--text-primary);
+  border-bottom-color: var(--text-primary);
 }
 
 .theme-detail-drawer__tab:focus-visible {
-  outline: 2px solid var(--color-accent, #006657);
+  outline: 2px solid var(--teal-dark);
   outline-offset: 2px;
-  border-radius: var(--radius-xs, 8px);
+  border-radius: var(--radius-xs);
 }
 
-/* Single grid cell: both panels contribute height; concealed panel stays in layout */
 .theme-detail-drawer__panel-stack {
   display: grid;
   grid-template-columns: minmax(0, 1fr);
@@ -89,20 +85,22 @@
   margin-bottom: 0;
 }
 
+/* Body Md 14px/20px */
 .theme-detail-drawer__overview {
   margin: 0 0 var(--space-12);
   font-size: 0.875rem;
   line-height: 1.55;
-  color: var(--color-text);
+  color: var(--text-primary);
 }
 
+/* Label Md 12px/18px — section cap */
 .theme-detail-drawer__holdings-heading {
   margin: 0 0 var(--space-8);
   font-size: 0.8125rem;
-  font-weight: 600;
+  font-weight: var(--font-weight-medium);
   letter-spacing: 0.03em;
   text-transform: uppercase;
-  color: var(--color-text-muted);
+  color: var(--text-secondary);
 }
 
 .theme-detail-drawer__holdings-list {
@@ -127,21 +125,21 @@
 .theme-detail-drawer__holding-name {
   flex: 1;
   min-width: 0;
-  color: var(--color-text);
+  color: var(--text-primary);
 }
 
 .theme-detail-drawer__holding-pct {
   flex-shrink: 0;
-  font-weight: 600;
+  font-weight: var(--font-weight-medium);
   font-variant-numeric: tabular-nums;
-  color: var(--color-text-muted);
+  color: var(--text-secondary);
 }
 
 .theme-detail-drawer__footnote {
   margin: var(--space-12) 0 0;
   font-size: 0.6875rem;
   line-height: 1.45;
-  color: var(--color-text-muted);
+  color: var(--text-secondary);
 }
 
 .theme-detail-drawer__actions {
@@ -150,23 +148,26 @@
   gap: var(--space-8);
   margin-top: var(--space-12);
   padding-top: var(--space-8);
-  border-top: 1px solid var(--border-primary, rgba(0, 0, 0, 0.08));
+  border-top: 1px solid var(--border-primary);
 }
 
+/* Button 3.0 Large */
 .theme-detail-drawer__btn {
   font-family: var(--font-family);
   font-size: 0.875rem;
-  font-weight: 600;
+  font-weight: var(--font-weight-medium);
+  min-height: 48px;
   padding: var(--space-12) var(--space-16);
-  border-radius: var(--radius-md);
+  border-radius: var(--radius-full);
   cursor: pointer;
-  border: 1px solid rgba(0, 0, 0, 0.12);
+  border: 1px solid var(--border-primary);
 }
 
+/* Primary: Teal-600 fill */
 .theme-detail-drawer__btn--primary {
-  background: var(--color-accent);
-  border-color: var(--color-accent);
-  color: #fff;
+  background: var(--teal-primary);
+  border-color: var(--teal-primary);
+  color: var(--text-primary);
 }
 
 .theme-detail-drawer__btn--primary:disabled {

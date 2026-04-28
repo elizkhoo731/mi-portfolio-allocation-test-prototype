@@ -1,3 +1,7 @@
+/**
+ * Theme Catalogue screen — MLDS 4.0 aligned.
+ */
+
 .theme-catalogue__list {
   list-style: none;
   margin: 0;
@@ -17,8 +21,8 @@
   align-items: stretch;
   width: 100%;
   border-radius: var(--radius-md);
-  border: 1px solid var(--border-primary, rgba(0, 0, 0, 0.08));
-  background: var(--color-surface);
+  border: 1px solid var(--border-primary);
+  background: var(--bg-secondary);
   overflow: hidden;
 }
 
@@ -32,28 +36,32 @@
   text-align: left;
 }
 
+/* Title Sm 16px/24px */
 .theme-catalogue__card-title {
   margin: 0 0 var(--space-4);
   font-size: 1rem;
-  font-weight: 600;
-  color: var(--color-text);
+  font-weight: var(--font-weight-medium);
+  line-height: 1.5rem;
+  color: var(--text-primary);
 }
 
+/* Body Md 14px/20px */
 .theme-catalogue__card-desc {
   margin: 0;
   font-size: 0.8125rem;
   line-height: 1.45;
-  color: var(--color-text-muted);
+  color: var(--text-secondary);
 }
 
+/* negative — "Already in your portfolio" */
 .theme-catalogue__card-reason {
   margin: var(--space-8) 0 0;
   font-size: 0.75rem;
-  font-weight: 600;
-  color: #ce293f;
+  font-weight: var(--font-weight-medium);
+  color: var(--color-negative);
 }
 
-/* MLDS Button 3.0 — Large with text: 48px height; side-by-side group (see Button Group 3.0) */
+/* MLDS Button Group 3.0 Large — 48px, side-by-side */
 .theme-catalogue__ctas {
   display: flex;
   flex-direction: row;
@@ -61,6 +69,7 @@
   align-items: stretch;
   gap: var(--space-8);
   padding: var(--space-12) var(--space-16) var(--space-16);
+  box-sizing: border-box;
 }
 
 .theme-catalogue__cta-add {
@@ -72,12 +81,12 @@
   padding: var(--space-12) var(--space-16);
   font-family: var(--font-family);
   font-size: 0.9375rem;
-  font-weight: 600;
+  font-weight: var(--font-weight-medium);
   line-height: 1.2;
-  color: #fff;
-  background: var(--color-accent);
+  color: var(--text-primary);
+  background: var(--teal-primary);
   border: none;
-  border-radius: var(--radius-md);
+  border-radius: var(--radius-full);
   cursor: pointer;
 }
 
@@ -87,7 +96,7 @@
 }
 
 .theme-catalogue__cta-add:focus-visible {
-  outline: 2px solid var(--color-accent);
+  outline: 2px solid var(--teal-dark);
   outline-offset: 2px;
 }
 
@@ -100,17 +109,17 @@
   padding: var(--space-12) var(--space-16);
   font-family: var(--font-family);
   font-size: 0.9375rem;
-  font-weight: 600;
+  font-weight: var(--font-weight-medium);
   line-height: 1.2;
-  color: var(--color-accent);
-  background: var(--color-surface);
-  border: 1px solid color-mix(in srgb, var(--color-accent) 35%, rgba(0, 0, 0, 0.12));
-  border-radius: var(--radius-md);
+  color: var(--text-primary);
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-primary);
+  border-radius: var(--radius-full);
   cursor: pointer;
 }
 
 .theme-catalogue__cta-details:focus-visible {
-  outline: 2px solid var(--color-accent);
+  outline: 2px solid var(--teal-dark);
   outline-offset: 2px;
 }
 
@@ -118,37 +127,41 @@
   margin: 0 0 var(--space-16);
   font-size: 0.9375rem;
   line-height: 1.5;
-  color: var(--color-text);
+  color: var(--text-primary);
 }
 
 .theme-catalogue__hint {
   margin: 0;
   font-size: 0.8125rem;
-  color: var(--color-text-muted);
+  color: var(--text-secondary);
   line-height: 1.45;
 }
 
 .theme-catalogue__capacity {
   margin: var(--space-8) 0 0;
   font-size: 0.8125rem;
-  font-weight: 600;
-  color: var(--color-text);
+  font-weight: var(--font-weight-medium);
+  color: var(--text-primary);
 }
 
 .theme-catalogue__footer {
   margin-top: var(--space-16);
 }
 
+/* Button 3.0 Large — Teal-600 primary */
 .theme-catalogue__continue {
+  box-sizing: border-box;
   width: 100%;
+  min-height: 48px;
   font-family: var(--font-family);
   font-size: 0.9375rem;
-  font-weight: 600;
-  padding: var(--space-12) var(--space-16);
-  border-radius: var(--radius-md);
+  font-weight: var(--font-weight-medium);
+  line-height: 1.5rem;
+  padding: var(--space-12) var(--space-24);
+  border-radius: var(--radius-full);
   border: none;
-  background: var(--color-accent);
-  color: #fff;
+  background: var(--teal-primary);
+  color: var(--text-primary);
   cursor: pointer;
 }
 

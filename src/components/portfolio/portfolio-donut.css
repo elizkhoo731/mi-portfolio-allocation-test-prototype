@@ -58,28 +58,30 @@
   padding: 18%;
 }
 
+/* Label Sm */
 .portfolio-donut__kicker {
   margin: 0;
   font-size: 0.625rem;
-  font-weight: 600;
+  font-weight: var(--font-weight-medium);
   letter-spacing: 0.04em;
   text-transform: uppercase;
-  color: var(--color-text-muted);
+  color: var(--text-secondary);
 }
 
+/* Headline Sm */
 .portfolio-donut__value {
   margin: 2px 0 0;
   font-size: 1.125rem;
-  font-weight: 700;
+  font-weight: var(--font-weight-medium);
   line-height: 1.15;
   letter-spacing: -0.02em;
-  color: var(--color-text);
+  color: var(--text-primary);
 }
 
 .portfolio-donut__pending {
   margin: 4px 0 0;
   font-size: 0.625rem;
-  font-weight: 600;
+  font-weight: var(--font-weight-medium);
   letter-spacing: 0.04em;
   text-transform: uppercase;
   color: var(--color-warning);

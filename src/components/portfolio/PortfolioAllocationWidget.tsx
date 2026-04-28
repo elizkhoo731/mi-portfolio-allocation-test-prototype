@@ -18,36 +18,32 @@ const HOLDINGS_PATH = "/holdings";
 
 /**
  * Unified Managed Investing portfolio block (spec §4.1).
- * Hides Manage and Add theme while rebalancing; shows target allocation as pending on the donut.
+ * Header uses the same card-header / pill-btn pattern as other dashboard sections.
  */
 export function PortfolioAllocationWidget() {
   const { portfolio, isRebalanceLocked } = usePortfolio();
 
-  if (!portfolio) {
-    return null;
-  }
+  if (!portfolio) return null;
 
   const locked = isRebalanceLocked;
   const rebalance = portfolio.rebalancingState;
   const segments = getPortfolioDonutSegments(portfolio);
   const legend = getSegmentLegendData(portfolio);
-  const pending = locked;
   const themeCount = portfolio.themes.length;
   const showAddTheme = themeCount < 3 && !locked;
 
   return (
     <section className="portfolio-widget" aria-labelledby="portfolio-widget-heading">
-      <div className="portfolio-widget__header">
-        <div>
-          <h2 id="portfolio-widget-heading" className="portfolio-widget__title">
-            My portfolio
-          </h2>
-          <p className="portfolio-widget__explainer">{CORE_PORTFOLIO_WIDGET_EXPLAINER}</p>
-        </div>
+
+      {/* Header row — same pattern as Recent Transactions / Watchlist / News */}
+      <div className="mi-dash__card-header" style={{ padding: 0, marginBottom: "var(--space-8)" }}>
+        <h2 id="portfolio-widget-heading" className="mi-dash__card-title" style={{ fontSize: "1.125rem" }}>
+          My Portfolio
+        </h2>
         {!locked ? (
           <Link
             to={MANAGE_PATH}
-            className="portfolio-widget__manage"
+            className="mi-dash__pill-btn"
             onClick={() => track("manage_allocation_tapped")}
           >
             Manage
@@ -55,11 +51,13 @@ export function PortfolioAllocationWidget() {
         ) : null}
       </div>
 
+      <p className="portfolio-widget__explainer">{CORE_PORTFOLIO_WIDGET_EXPLAINER}</p>
+
       <div className="portfolio-widget__row">
         <PortfolioDonut
           totalValue={portfolio.totalValue}
           segments={segments}
-          isPending={pending}
+          isPending={locked}
           size={120}
         />
         <div className="portfolio-widget__copy">

@@ -3,9 +3,9 @@
   display: flex;
   flex-direction: column;
   gap: var(--space-8);
-  border: 1px solid var(--border-primary, rgba(0, 0, 0, 0.08));
+  border: 1px solid var(--border-primary);
   border-radius: var(--radius-md);
-  background: var(--color-surface);
+  background: var(--bg-secondary);
   padding: var(--space-12);
   text-align: left;
   font-family: var(--font-family);
@@ -19,24 +19,26 @@
   gap: var(--space-12);
 }
 
+/* Label Lg 14px/20px */
 .holding-row__ticker {
   margin: 0;
   font-size: 0.875rem;
-  font-weight: 600;
-  color: var(--color-text);
+  font-weight: var(--font-weight-medium);
+  color: var(--text-primary);
 }
 
+/* Body Sm 12px/18px */
 .holding-row__name {
   margin: var(--space-4) 0 0;
   font-size: 0.8125rem;
   line-height: 1.4;
-  color: var(--color-text-muted);
+  color: var(--text-secondary);
 }
 
 .holding-row__weight {
   margin: 0;
   font-size: 0.875rem;
-  font-weight: 600;
-  color: var(--color-text);
+  font-weight: var(--font-weight-medium);
+  color: var(--text-primary);
   flex-shrink: 0;
 }
