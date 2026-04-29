@@ -1,22 +1,115 @@
 /**
- * Mobile prototype viewport — MLDS 375×812px.
+ * Phone shell mockup — wraps the 375×812px prototype screen.
+ * Desktop-only: phone decorations hidden at ≤680px via app-shell.css.
  */
 
+/* ─────────────────────────────────────────────
+   Outer phone body
+───────────────────────────────────────────── */
+.phone-shell {
+  position: relative;
+  flex-shrink: 0;
+  /* 375px screen + 12px bezel each side */
+  width: 399px;
+  /* 812px screen + 14px top bezel + 14px bottom bezel */
+  height: 840px;
+  border-radius: 54px;
+  background: #1c1c1e;
+  padding: 14px 12px;
+  box-sizing: border-box;
+  box-shadow:
+    0 0 0 1px rgba(255, 255, 255, 0.10),   /* outer rim highlight */
+    0 30px 80px rgba(0, 0, 0, 0.45),        /* ambient drop shadow */
+    inset 0 0 0 1px rgba(255, 255, 255, 0.05); /* inner surface */
+}
+
+/* ─────────────────────────────────────────────
+   Physical side buttons (decorative)
+───────────────────────────────────────────── */
+.phone-shell__btn-vol-up,
+.phone-shell__btn-vol-down {
+  position: absolute;
+  left: -3px;
+  width: 3px;
+  background: #3a3a3c;
+  border-radius: 2px 0 0 2px;
+}
+.phone-shell__btn-vol-up   { top: 108px; height: 34px; }
+.phone-shell__btn-vol-down { top: 156px; height: 34px; }
+
+.phone-shell__btn-power {
+  position: absolute;
+  right: -3px;
+  top: 138px;
+  width: 3px;
+  height: 64px;
+  background: #3a3a3c;
+  border-radius: 0 2px 2px 0;
+}
+
+/* ─────────────────────────────────────────────
+   Screen area (portal target for bottom sheets)
+───────────────────────────────────────────── */
 .mobile-device {
   position: relative;
   width: 375px;
-  flex-shrink: 0;
   height: 812px;
   background: var(--bg-primary);
-  border-radius: var(--radius-lg);
-  border: 1px solid var(--border-primary);
-  box-shadow: var(--shadow-md);
+  border-radius: 42px;
   overflow: hidden;
   display: flex;
   flex-direction: column;
   isolation: isolate;
 }
 
+/* ─────────────────────────────────────────────
+   Status bar with notch
+───────────────────────────────────────────── */
+.phone-shell__status-bar {
+  position: relative;
+  flex-shrink: 0;
+  display: flex;
+  align-items: flex-end;  /* push text below notch */
+  justify-content: space-between;
+  height: 50px;
+  padding: 0 24px 10px;
+  z-index: 1;
+}
+
+/* Camera pill notch */
+.phone-shell__notch {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 126px;
+  height: 36px;
+  background: #1c1c1e;
+  border-radius: 0 0 22px 22px;
+  pointer-events: none;
+}
+
+.phone-shell__time {
+  font-family: var(--font-family);
+  font-size: 0.9375rem;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  line-height: 1;
+  color: var(--text-primary);
+  user-select: none;
+}
+
+.phone-shell__status-icons {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--text-primary);
+  user-select: none;
+}
+
+/* ─────────────────────────────────────────────
+   Scrollable content
+───────────────────────────────────────────── */
 .mobile-device__inner {
   flex: 1;
   min-height: 0;
@@ -25,20 +118,61 @@
   /* default padding for sub-pages that don't manage their own */
   padding: var(--space-16);
   -webkit-overflow-scrolling: touch;
-  scrollbar-width: thin;
-  scrollbar-color: var(--border-primary) transparent;
+  /* hide scrollbar — real phones don't show one */
+  scrollbar-width: none;
 }
 
-.mobile-device__inner::-webkit-scrollbar { width: 4px; }
-.mobile-device__inner::-webkit-scrollbar-track { background: transparent; }
-.mobile-device__inner::-webkit-scrollbar-thumb {
-  background: var(--border-primary);
-  border-radius: var(--radius-full);
-}
+.mobile-device__inner::-webkit-scrollbar { display: none; }
 
 /* MI dashboard manages its own padding and full-bleed bg */
 .mobile-device__inner > .mi-dash {
   margin: calc(-1 * var(--space-16));
   width: calc(100% + 2 * var(--space-16));
   min-width: 0;
+}
+
+/* ─────────────────────────────────────────────
+   Home indicator
+───────────────────────────────────────────── */
+.phone-shell__home-bar {
+  flex-shrink: 0;
+  width: 134px;
+  height: 5px;
+  margin: 6px auto 10px;
+  background: rgba(0, 0, 0, 0.18);
+  border-radius: var(--radius-full);
+}
+
+/* ─────────────────────────────────────────────
+   Mobile / small viewport — strip phone shell
+   The scenario panel stacks on top; no frame shown.
+───────────────────────────────────────────── */
+@media (max-width: 680px) {
+  .phone-shell {
+    width: 100%;
+    height: auto;
+    background: transparent;
+    border-radius: 0;
+    padding: 0;
+    box-shadow: none;
+  }
+
+  .phone-shell__btn-vol-up,
+  .phone-shell__btn-vol-down,
+  .phone-shell__btn-power,
+  .phone-shell__status-bar,
+  .phone-shell__home-bar {
+    display: none;
+  }
+
+  .mobile-device {
+    width: 100%;
+    height: auto;
+    min-height: 100dvh;
+    border-radius: var(--radius-lg);
+  }
+
+  .mobile-device__inner {
+    overflow: visible;
+  }
 }
